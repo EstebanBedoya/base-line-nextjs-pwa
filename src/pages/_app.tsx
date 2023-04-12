@@ -2,6 +2,10 @@
 import Head from "next/head";
 import { AppProps } from "next/app";
 import { ChakraProvider } from "@chakra-ui/react";
+import { Provider } from "react-redux";
+
+/** @scripts */
+import store from "@core/store";
 
 /** @styles */
 import "../styles/globals.css";
@@ -37,9 +41,11 @@ export default function MyApp({ Component, pageProps }: AppProps) {
         <link rel="apple-touch-icon" href="/apple-icon.png"></link>
         <meta name="theme-color" content="#317EFB" />
       </Head>
-      <ChakraProvider theme={theme}>
-        <Component {...pageProps} />
-      </ChakraProvider>
+      <Provider store={store}>
+        <ChakraProvider theme={theme}>
+          <Component {...pageProps} />
+        </ChakraProvider>
+      </Provider>
     </>
   );
 }
