@@ -1,5 +1,8 @@
+/** @packages */
 import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
+
+/** @scripts */
 import HomePage from "../../src/pages";
 
 describe("Describe index page", () => {
