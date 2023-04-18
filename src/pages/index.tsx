@@ -1,4 +1,4 @@
-// @packages
+/** @packages */
 import { useTranslation } from 'react-i18next'
 
 const Home = () => {
