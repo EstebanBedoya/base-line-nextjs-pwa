@@ -3,15 +3,17 @@ import Head from "next/head";
 import { AppProps } from "next/app";
 import { ChakraProvider } from "@chakra-ui/react";
 import { Provider } from "react-redux";
+import { appWithI18Next } from 'ni18n';
 
 /** @scripts */
 import store from "@core/store";
+import { ni18nConfig } from '../../ni18n.config';
 
 /** @styles */
 import "../styles/globals.css";
 import { theme } from "../styles/theme";
 
-export default function MyApp({ Component, pageProps }: AppProps) {
+const MyApp = ({ Component, pageProps }: AppProps) => {
   return (
     <>
       <Head>
@@ -49,3 +51,5 @@ export default function MyApp({ Component, pageProps }: AppProps) {
     </>
   );
 }
+
+export default appWithI18Next(MyApp, ni18nConfig);
